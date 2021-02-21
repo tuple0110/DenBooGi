@@ -5,16 +5,26 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 let channel;
 
+let options = new chrome.Options();
+options.setChromeBinaryPath(process.env.CHROME_BINARY_PATH);
+
+options.addArguments("--headless");
+options.addArguments("--disable-gpu");
+options.addArguments("--no-sandbox");
+
 client.on('ready', () => {
     channel = client.channels.cache.get("813005277708288060");
     setTimeout(func, 10000);
 });
 
 let driver;
+let serviceBuilder = new chrome.ServiceBuilder(process.env.CHROME_DRIVER_PATH);
 
 func = async () => {
     driver = await new webdriver.Builder()
-    .forBrowser('chrome')
+    .forBrowser(webdriver.Browser.CHROME)
+    .setChromeOptions(options)
+    .setChromeService(serviceBuilder)
     .build();
     await driver.get('http://denvers.kro.kr:8123/');
     // try {
