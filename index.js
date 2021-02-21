@@ -43,7 +43,7 @@ func = async () => {
                 }
             }, Infinity);
             old = message;
-            channel.send(message.replace("보리님", "<@353859042583642122>"));
+            channel.send(message.replace("보리님", "<@353859042583642122>").replace(/헤주주님|오리님/, "<@743148855008297032>").replace(/화운님|에린님/, "<@477129777426333727>"));
         }
     } catch (e) {
         driver.quit();
