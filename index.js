@@ -1,4 +1,4 @@
-require('chromedriver');
+var chrome = require('selenium-webdriver/chrome');
 var webdriver = require('selenium-webdriver');
 
 const Discord = require('discord.js');
