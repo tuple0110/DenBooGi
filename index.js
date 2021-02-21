@@ -13,8 +13,9 @@ client.on('ready', () => {
 let driver;
 
 func = async () => {
+    driver = await new webdriver.Builder()
     try {
-         driver = await new webdriver.Builder()
+        driver = await new webdriver.Builder()
         .forBrowser('chrome')
         .build();
         await driver.get('http://denvers.kro.kr:8123/');
