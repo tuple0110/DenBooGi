@@ -4,6 +4,7 @@ var webdriver = require('selenium-webdriver');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 let channel;
+let dataChannel;
 
 let options = new chrome.Options();
 options.setChromeBinaryPath(process.env.CHROME_BINARY_PATH);
@@ -14,6 +15,8 @@ options.addArguments("--no-sandbox");
 
 client.on('ready', () => {
     channel = client.channels.cache.get("813005277708288060");
+    dataChannel = client.channels.cache.get("814506268415885323");
+    dataChannel.send("SERVER OFF");
     setTimeout(func, 10000);
 });
 
