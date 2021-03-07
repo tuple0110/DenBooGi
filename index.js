@@ -18,7 +18,7 @@ client.on('ready', () => {
     channel = client.channels.cache.get("813005277708288060");
     channel2 = client.channels.cache.get("818088101498322945");
     dataChannel = client.channels.cache.get("814506268415885323");
-    dataChannel.messages.fetch("701574160211771462")
+    dataChannel.messages.fetch("817374127429517353")
     .then(message => {
         dataMessage = message;
     });
